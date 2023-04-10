@@ -1841,4 +1841,128 @@
 // console.log(solution("abcde", "abc")); // false
 // console.log(solution("abc", "")); // true
 
-//88()
+//88(recursion)
+//1)
+// function bouncingBall(h, bounce, window) {
+//   const cond = h > 0 && bounce > 0 && bounce < 1 && window < h;
+//   if (cond) {
+//     return h < window ? -1 : 2 + bouncingBall(h * bounce, bounce, window);
+//   } else {
+//     return -1;
+//   }
+// }
+
+//2)
+// function bouncingBall(h, bounce, window) {
+//   if (h > 0 && bounce > 0 && bounce < 1 && h > window) {
+//     while (h > window) {
+//       return 2 + bouncingBall(h * bounce, bounce, window);
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(bouncingBall(3.0, 0.66, 1.5)); // 3
+// console.log(bouncingBall(30.0, 0.66, 1.5)); // 15
+// console.log(bouncingBall(3.0, 1.0, 1.5)); // -1
+
+//89(recursion, sumInteger)
+//1)
+// function getSum(a, b) {
+//   let sum = 0;
+//   if (a === b) {
+//     return a;
+//   } else if (a < b) {
+//     for (let i = a; i <= b; i += 1) {
+//       sum += i;
+//     }
+//   } else {
+//     for (let i = b; i <= a; i += 1) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+
+//2)
+// function GetSum(a, b) {
+//   if (a == b) return a;
+//   else if (a < b) return a + GetSum(a + 1, b);
+//   else return a + GetSum(a - 1, b);
+// }
+
+// console.log(getSum(0, -1)); // -1
+// console.log(getSum(0, 1)); // 1
+// console.log(getSum(2, 2)); // 2
+// console.log(getSum(1, 0)); // 1
+// console.log(getSum(-1, 2)); // 2
+
+//90(discount, sum, total, if)
+// Every day you rent the car costs $40.
+// If you rent the car for 7 or more days, you get $50 off your total.
+// Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+// Write a code that gives out the total amount for different days(d).
+
+//1)
+// function rentalCarCost(d) {
+//   const rentalCarCost = {
+//     priceForOneDay: 40,
+//     days: d,
+//     discountMin: 20,
+//     discountMax: 50,
+//     totalSumWithoutDiscount() {
+//       return this.days * this.priceForOneDay;
+//     },
+//     totalSumWithDiscountMin() {
+//       return this.days * this.priceForOneDay - 20;
+//     },
+//     totalSumWithDiscountMax() {
+//       return this.days * this.priceForOneDay - 50;
+//     },
+//   };
+
+//   if (d >= 3 && d < 7) {
+//     return rentalCarCost.totalSumWithDiscountMin();
+//   }
+//   if (d >= 7) {
+//     return rentalCarCost.totalSumWithDiscountMax();
+//   }
+//   return rentalCarCost.totalSumWithoutDiscount();
+// }
+
+//2)
+// function rentalCarCost(d) {
+//   let total = d * 40;
+//   if (d >= 7) return total - 50;
+//   if (d >= 3) return total - 20;
+//   return total;
+// }
+
+// console.log(rentalCarCost(1)); // 40
+// console.log(rentalCarCost(2)); // 80
+// console.log(rentalCarCost(3)); // 100
+// console.log(rentalCarCost(4)); // 140
+// console.log(rentalCarCost(5)); // 180
+// console.log(rentalCarCost(6)); // 220
+// console.log(rentalCarCost(7)); // 230
+// console.log(rentalCarCost(8)); // 270
+// console.log(rentalCarCost(9)); // 310
+// console.log(rentalCarCost(10)); // 350
+
+//91()
+// You will be given a number and you will need to return it as a string in Expanded Form.
+
+// function expandedForm(num) {
+//   return num
+//     .toString()
+//     .split("")
+//     .map((el, i, arr) => el * Math.pow(10, arr.length - i - 1))
+//     .filter((num) => num !== 0)
+//     .join(" + ");
+// }
+
+// console.log(expandedForm(12)); // '10 + 2'
+// console.log(expandedForm(42)); // '40 + 2'
+// console.log(expandedForm(70304)); // '70000 + 300 + 4'
+
+//92()
