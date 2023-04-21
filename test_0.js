@@ -1965,4 +1965,26 @@
 // console.log(expandedForm(42)); // '40 + 2'
 // console.log(expandedForm(70304)); // '70000 + 300 + 4'
 
-//92()
+//93(cycle, number, array)
+// const numberString = () => {
+//   let arrRes = [];
+//   for (let i = 0; i <= 100; i += 1) {
+//     if (i % 3 === 0) {
+//       //   arrRes.push(`${i} fizz - 3`);
+//       arrRes.push(i);
+//     }
+//     if (i % 5 === 0) {
+//       // arrRes.push(`${i} buzz - 5`);
+//       arrRes.push(i);
+//     }
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       //   arrRes.push(`${i} fizzbuzz - 3 & 5`);
+//       arrRes.push(i);
+//     }
+//   }
+//   return new Set(arrRes);
+// };
+
+// console.log(numberString());
+
+//94()
